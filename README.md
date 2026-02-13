@@ -4,7 +4,7 @@
 
 ### Context
 
-- akka shraded cluster
+- akka sharded cluster
 - statefull `ProcessActor` that:
   - is initialized by handling `StartCommands`; the `StartCommand` sets the Id that will be used by all subsequent `HitCommands` that need to land in the same actor
   - updates it's state by handling `HitCommands`
