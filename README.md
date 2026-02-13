@@ -6,8 +6,8 @@
 
 - akka shraded cluster
 - statefull `ProcessActor` that:
-      - is initialized by handling `StartCommands`; the `StartCommand` sets the Id that will be used by all subsequent `HitCommands` that need to land in the same actor
-      - updates it's state by handling `HitCommands`
+  - is initialized by handling `StartCommands`; the `StartCommand` sets the Id that will be used by all subsequent `HitCommands` that need to land in the same actor
+  - updates it's state by handling `HitCommands`
 - the `ProcessMessageExtractor` is used to route the commands to the correct actor instance
 
 ### Issue
@@ -21,8 +21,8 @@ In the `ProcessMessageExtractor` in the case of the `StartCommand`:
 - solution is build on dotnet 8 + akkaAkka.Cluster.Hosting v1.5.60
 - open [./AkkaShardingSandbox.sln](./AkkaShardingSandbox.sln)
 - set `USE_ID_FROM_COMMAND` in [Program.cs](./AkkaShardingSandbox/Program.cs) on line 12
-      - to `false` to set the Id of the `StartCommand` inside the `ProcessMessageExtractor`
-      - to `true` to use the existing Id from the `StartCommand`
+  - to `false` to set the Id of the `StartCommand` inside the `ProcessMessageExtractor`
+  - to `true` to use the existing Id from the `StartCommand`
 - run project
 
 ## Expected behaviour when `USE_ID_FROM_COMMAND = true`(the `ProcessMessageExtractor` takes the id from the `StartCommand`)
